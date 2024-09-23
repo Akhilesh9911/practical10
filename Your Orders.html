@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dine Dash - Your Orders</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width:100%;
+            height:100vh;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #ff4d4d;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .orders-page {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar button:hover {
+            background-color: #e63946;
+        }
+
+        .filter-sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 10%;
+        }
+
+        .filter-sort select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .orders-list {
+            padding: 0 10%;
+        }
+
+        .order-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-card h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .order-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .order-card .order-status {
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Dine Dash</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="Categories.html">Categories</a>
+        <a href="YourOrders.html" class="active">Your Orders</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="AboutUs.html">About Us</a>
+    </div>
+
+    <!-- Orders Page Content -->
+    <div class="orders-page">
+        <h1>Your Orders</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search your orders by restaurant, dish, or status">
+            <button>Search</button>
+        </div>
+
+        <!-- Filter and Sort Options -->
+        <div class="filter-sort">
+            <div class="filter">
+                <label for="filter">Filter by:</label>
+                <select id="filter">
+                    <option value="all">All Orders</option>
+                    <option value="pending">Pending</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="canceled">Canceled</option>
+                </select>
+            </div>
+            <div class="sort">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="date">Date</option>
+                    <option value="status">Status</option>
+                    <option value="restaurant">Restaurant</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Orders List -->
+        <div class="orders-list">
+            <div class="order-card">
+                <h3>Order #1234</h3>
+                <p><strong>Restaurant:</strong> Pizza Hut</p>
+                <p><strong>Date:</strong> August 20, 2024</p>
+                <p><strong>Status:</strong> <span class="order-status">Delivered</span></p>
+            </div>
+
+            <div class="order-card">
+                <h3>Order #1235</h3>
+                <p><strong>Restaurant:</strong> Namaste Mexica</p>
+                <p><strong>Date:</strong> August 21, 2024</p>
+                <p><strong>Status:</strong> <span class="order-status">Pending</span></p>
+            </div>
+
+            <div class="order-card">
+                <h3>Order #1236</h3>
+                <p><strong>Restaurant:</strong> Hello Americana</p>
+                <p><strong>Date:</strong> August 22, 2024</p>
+                <p><strong>Status:</strong> <span class="order-status">Canceled</span></p>
+            </div>
+            <!-- Add more order cards as needed -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Dine Dash. All rights reserved.
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </div>
+
+</body>
+
+</html>
